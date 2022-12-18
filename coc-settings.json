@@ -1,0 +1,9 @@
+{
+  "snippets.ultisnips.pythonPrompt": false,
+  "coc.preferences.formatOnSave": true,
+  //"coc.preferences.formatOnSaveFileType": ["css","html","javascript","typescript","typescriptreact","javascriptreact","json"]
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "es5",
+  "python.linting.enabled": true
+}
