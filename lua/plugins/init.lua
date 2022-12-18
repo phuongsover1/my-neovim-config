@@ -57,4 +57,22 @@ return require('packer').startup(function(use)
       direction = 'horizontal',
     })
   end }
+  use {
+    "folke/zen-mode.nvim",
+    config = "require('zen-mode-config')"
+  }
+  use {
+    "folke/twilight.nvim",
+    config = "require('twilight-config')"
+  }
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      local saga = require("lspsaga")
+
+      saga.init_lsp_saga()
+
+    end,
+  })
 end)

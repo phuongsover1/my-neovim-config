@@ -8,6 +8,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.cmd [[set sessionoptions-=blank]]
+vim.cmd [[colorscheme tokyonight-night]]
 --vim.opt.clipboard+=unnamed
 
 require('plugins')
@@ -26,5 +27,4 @@ require('colorizer-config')
 require('gitsigns-config')
 require('null-ls-config')
 require('dashboard-config')
-require('rose-pine-config')
 require('nvim-comment-config')

@@ -6,6 +6,7 @@ local mappings = {
   x = {":bdelete<CR>", "Close the buffer"},
   E = {":e ~/.config/nvim/init.lua<CR>", "Edit neovim config"},
   b = {":Telescope buffers<cr>", "Telescope Buffers"},
+  z = {":ZenMode<cr>", "Open ZenMode"},
 
   l = {
     name = "LSP",
