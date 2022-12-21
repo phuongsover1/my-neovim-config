@@ -66,4 +66,5 @@ return require('packer').startup(function(use)
     config = "require('twilight-config')"
   }
   use {"neoclide/coc.nvim", branch= "release"}
+  use 'matbme/JABS.nvim'
 end)

@@ -44,3 +44,6 @@ keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- JABS-Buffer
+keymap("n", "<leader>,", "<cmd>JABSOpen<cr>", {silent = false, noremap=true})
