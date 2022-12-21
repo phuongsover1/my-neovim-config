@@ -7,6 +7,9 @@
 
 
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  require'lspconfig'.angularls.setup{
+    capabilities = capabilities
+  }
   require'lspconfig'.jsonls.setup {
     capabilities = capabilities
   }
