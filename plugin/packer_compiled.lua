@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/phuong/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/phuong/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/phuong/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -221,7 +226,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17open_mapping\n<c-\\>\tsize\3\20\14direction\15horizontal\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\14direction\15horizontal\17open_mapping\n<c-\\>\tsize\3\20\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/home/phuong/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -261,22 +266,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-require('twilight-config')
-time([[Config for twilight.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-require('zen-mode-config')
-time([[Config for zen-mode.nvim]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17open_mapping\n<c-\\>\tsize\3\20\14direction\15horizontal\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: twilight.nvim
+time([[Config for twilight.nvim]], true)
+require('twilight-config')
+time([[Config for twilight.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\14direction\15horizontal\17open_mapping\n<c-\\>\tsize\3\20\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: zen-mode.nvim
+time([[Config for zen-mode.nvim]], true)
+require('zen-mode-config')
+time([[Config for zen-mode.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
