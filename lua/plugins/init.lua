@@ -67,4 +67,6 @@ return require('packer').startup(function(use)
   use {"neoclide/coc.nvim", branch= "release"}
   use 'matbme/JABS.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use 'EdenEast/nightfox.nvim'
+  use 'karb94/neoscroll.nvim'
 end)
