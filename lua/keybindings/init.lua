@@ -47,3 +47,10 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 -- JABS-Buffer
 keymap("n", "<leader>,", "<cmd>JABSOpen<cr>", {silent = false, noremap=true})
+
+keymap('n', '<C-d>', '<C-d>zz', {silent = false, noremap = true})
+keymap('n', '<C-u>', '<C-u>zz', {silent = false, noremap = true})
+
+
+local opts = { noremap=true, silent=true }
+  keymap("n", "<leader>f", [[<cmd>lua require("stylua-nvim").format_file()<CR>]], opts)
