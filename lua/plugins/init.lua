@@ -35,6 +35,7 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
+
 	use("onsails/lspkind.nvim")
 	use("folke/which-key.nvim")
 	use("p00f/nvim-ts-rainbow")
@@ -81,4 +82,19 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "ckipp01/stylua-nvim" })
+  use 'shaunsingh/solarized.nvim'
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    requires = { {"nvim-tree/nvim-web-devicons"} }
+})
+use {
+  "ray-x/lsp_signature.nvim",
+  config = function()
+    require "lsp_signature".setup()
+  end,
+}
 end)

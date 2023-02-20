@@ -19,10 +19,10 @@ call plug#begin()
 
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'https://github.com/xiyaowong/nvim-transparent'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
@@ -44,33 +44,44 @@ Plug 'gennaro-tedesco/nvim-peekup'
 Plug 'https://github.com/AckslD/nvim-neoclip.lua'
 Plug 'https://github.com/terrortylor/nvim-comment'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'rose-pine/neovim'
+Plug 'shaunsingh/solarized.nvim'
 
 call plug#end()
 
-lua << EOF
--- Example config in Lua
-vim.g.gruvbox_baby_function_style = "NONE"
-vim.g.gruvbox_baby_keyword_style = "italic"
--- Enable telescope theme
-vim.g.gruvbox_baby_telescope_theme = 1
+"""""""""""""""""""""""""""" GRUVBOX THEME """""""""""""""""""""""""""'"
+" lua << EOF
+" -- Example config in Lua
+" vim.g.gruvbox_baby_function_style = "NONE"
+" vim.g.gruvbox_baby_keyword_style = "italic"
+" -- Enable telescope theme
+" vim.g.gruvbox_baby_telescope_theme = 1
+"
+" -- Enable transparent mode
+" vim.g.gruvbox_baby_transparent_mode = 1
+"
+" -- Load the colorscheme
+" vim.cmd[[colorscheme gruvbox-baby]]
+"
+" require('telescope').setup({
+"   defaults = {
+"     borderchars = {
+"       prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+"       results = { " " },
+"       preview = { " " },
+"     },
+"   }
+" })
+" EOF
+"""""""""""""""""""""""""""" END GRUVBOX THEME """""""""""""""""""""""""""'"
 
--- Enable transparent mode
-vim.g.gruvbox_baby_transparent_mode = 1
+"""""""""""""""""""""""""""" NeoSolarized THEME """""""""""""""""""""""""""'"
+set background=light
+colorscheme solarized
+"""""""""""""""""""""""""""" END NeoSolarized THEME """""""""""""""""""""""""""'"
 
--- Load the colorscheme
-vim.cmd[[colorscheme gruvbox-baby]]
-
-require('telescope').setup({
-  defaults = {
-    borderchars = {
-      prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-      results = { " " },
-      preview = { " " },
-    },
-  }
-})
-EOF
-"colorscheme tokyonight
+"""""""""""""""""""""""""""" TOKYO-NIGHT THEME """""""""""""""""""""""""""'"
+" colorscheme tokyonight-night
 "lua require('colorbuddy').colorscheme('gruvbuddy')
 "set background=dark " or light if you want light mode
 "colorscheme gruvbox
@@ -82,54 +93,10 @@ lua << EOF
 
 EOF
 
-lua << EOF
-
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'gruvbox-baby',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-}
-EOF
 "
 
 
-"" Treesitter
-""""""""""""""""""""" Begin
+"""""""""""""""""""""""""""" TREESITTER """""""""""""""""""""""""""'"
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
@@ -167,11 +134,10 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-""""""""""""""""""""  End
+"""""""""""""""""""""""""""" END TREESITTER """""""""""""""""""""""""""'"
 
 
-"" Coc neovim
-""""""""""""""""""""" Begin
+"""""""""""""""""""""""""""" COC NEOVIM """""""""""""""""""""""""""'"
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
 set encoding=utf-8
@@ -360,14 +326,13 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
-
-""""""""""""""""""""  End
-
+"""""""""""""""""""""""""""" END COC NEOVIM """""""""""""""""""""""""""'"
 
 
 
-"" Telescope
-""""""""""""""""""""  Begin
+
+
+"""""""""""""""""""""""""""" TELESCOPE """""""""""""""""""""""""""'"
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -380,16 +345,15 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-""""""""""""""""""""  End
+"""""""""""""""""""""""""""" END TELESCOPE """""""""""""""""""""""""""'"
 
 
-"" Bufferline
-""""""""""""""""""""  Begin
+"""""""""""""""""""""""""""" BUFFERLINE """""""""""""""""""""""""""'"
 lua << EOF
 require("bufferline").setup{}
 EOF
 
-""""""""""""""""""""  End
+"""""""""""""""""""""""""""" END BUFFERLINE """""""""""""""""""""""""""'"
 
 lua << EOF
 require('modicator').setup()
@@ -397,6 +361,7 @@ EOF
 
 
 
+"""""""""""""""""""""""""""" IDENT BLANKLINE """""""""""""""""""""""""""'"
 lua << EOF
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
@@ -410,6 +375,9 @@ require("indent_blankline").setup {
 
 EOF
 
+"""""""""""""""""""""""""""" END IDENT BLANKLINE """""""""""""""""""""""""""'"
+
+"""""""""""""""""""""""""""" TOGGLETERM """""""""""""""""""""""""""'"
 lua << EOF
 require'toggleterm'.setup {
 	-- size can be a number or function which is passed the current terminal
@@ -433,3 +401,60 @@ let g:peekup_paste_after = '<leader>p'
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 lua require('nvim_comment').setup()
+"""""""""""""""""""""""""""" END TOGGLETERM """""""""""""""""""""""""""'"
+
+
+"""""""""""""""""""""""""""" KEYMAP """""""""""""""""""""""""""'"
+
+lua << EOF
+  vim.g.mapleader = ' '
+  local keymap = vim.api.nvim_set_keymap;
+  keymap('i', 'jk', '<Esc>', { noremap = true, silent = false })
+EOF
+
+
+"""""""""""""""""""""""""""" LUALINE CONFIG """""""""""""""""""""""""""'"
+lua << EOF
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
+EOF
+"""""""""""""""""""""""""""" END LUALINE CONFIG """""""""""""""""""""""""""'"
