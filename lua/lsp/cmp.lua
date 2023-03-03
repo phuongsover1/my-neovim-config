@@ -4,23 +4,22 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
 
-
 cmp.setup({
   on_attach = function(client)
     if client.server_capabilities.documentHighlightProvider then
-      vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
-      vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
+      vim.api.nvim_create_augroup("lsp_document_highlight", {clear = true})
+      vim.api.nvim_clear_autocmds {buffer = bufnr, group = "lsp_document_highlight"}
       vim.api.nvim_create_autocmd("CursorHold", {
         callback = vim.lsp.buf.document_highlight,
         buffer = bufnr,
         group = "lsp_document_highlight",
-        desc = "Document Highlight",
+        desc = "Document Highlight"
       })
       vim.api.nvim_create_autocmd("CursorMoved", {
         callback = vim.lsp.buf.clear_references,
         buffer = bufnr,
         group = "lsp_document_highlight",
-        desc = "Clear All the References",
+        desc = "Clear All the References"
       })
     end
   end,
@@ -31,7 +30,7 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
+    end
   },
   window = {
     -- completion = cmp.config.window.bordered(),
@@ -42,49 +41,47 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({select = true}) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    { name = 'luasnip', option = { use_show_condition = true } }, -- For luasnip users.
+    {name = 'nvim_lsp'}, -- { name = 'vsnip' }, -- For vsnip users.
+    {name = 'luasnip', option = {use_show_condition = true}} -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-    --{ name = 'buffer' },
+    -- { name = 'buffer' },
   }),
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol_text', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      ellipsis_char = '...' -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
     })
   }
 })
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = {Error = " ", Warn = " ", Hint = " ", Info = " "}
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
-
---vim.g.completeopt = "menu,menuone,noselect,noinsert"
---local has_words_before = function()
+-- vim.g.completeopt = "menu,menuone,noselect,noinsert"
+-- local has_words_before = function()
 --  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 --  return col ~= 0
 --             and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
 --             == nil
---end
+-- end
 --
---local feedkey = function(key, mode)
+-- local feedkey = function(key, mode)
 --  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
---end
+-- end
 ---- Setup nvim-cmp.
---local cmp = require 'cmp'
---local lspkind = require('lspkind')
+-- local cmp = require 'cmp'
+-- local lspkind = require('lspkind')
 --
---cmp.setup({
+-- cmp.setup({
 -- -- preselect = cmp.PreselectMode.None,
 --  snippet = {
 --    expand = function(args)
@@ -133,5 +130,5 @@ require("luasnip.loaders.from_vscode").lazy_load()
 --    {name = 'buffer'}
 --  },
 --  formatting = {format = lspkind.cmp_format({with_text = true, maxwidth = 50})}
---})
+-- })
 --
