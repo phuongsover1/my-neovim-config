@@ -8,19 +8,21 @@ vim.opt.tabstop = 2
 vim.opt.cursorline = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.mouse = vim.cmd([[set sessionoptions-=blank]])
+-- vim.opt.mouse = vim.cmd([[set sessionoptions-=blank]])
 vim.cmd([[autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc  ]])
 -- vim.cmd [[colorscheme tokyonight-night]]
 -- vim.opt.clipboard+=unnamed
 vim.cmd([[
 let g:coc_start_at_startup=0
-
+let g:sneak#label = 1
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 ]])
 
 require("plugins")
-require("treesitter-config")
 require("telescope-config")
 require("bufferline-config")
+require("treesitter-config")
 require("web-devicons")
 require("nvim-tree-config")
 require('lsp')
@@ -37,7 +39,6 @@ require("tokyonight-config")
 require("jabs-buffer-config")
 -- require('gruvbox-config')
 -- require('nightfox-config')
--- require('neoscroll-config')
 require("surround-config")
 -- require('nord-config')
 -- require('rose-pine-config')
@@ -45,3 +46,6 @@ require("surround-config")
 -- require("solarized-config")
 -- require("lualine-config")
 require("feline-config")
+require("nvim-dap-config")
+require('dap-ui-config')
+require('jdtls-config')

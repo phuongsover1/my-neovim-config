@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "html", "lua", "css","javascript" },
+  ensure_installed = {"html", "lua", "css", "javascript"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -11,7 +11,7 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = false
   },
   rainbow = {
     enable = true,
@@ -20,5 +20,7 @@ require'nvim-treesitter.configs'.setup {
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
+    query = 'rainbow-parens',
+    strategy = require 'ts-rainbow.strategy.global'
   }
 }

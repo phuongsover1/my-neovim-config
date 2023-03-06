@@ -65,7 +65,6 @@ return require("packer").startup(function(use)
   use("matbme/JABS.nvim")
   use("ellisonleao/gruvbox.nvim")
   use("EdenEast/nightfox.nvim")
-  use("karb94/neoscroll.nvim")
   use({"kylechui/nvim-surround", tag = "*"})
   use("shaunsingh/nord.nvim")
   use({
@@ -74,7 +73,7 @@ return require("packer").startup(function(use)
     config = function()
       -- local highlights = require('rose-pine.plugins.toggleterm')
       require("toggleterm").setup({
-        size = 20,
+        size = 15,
         open_mapping = [[<c-\>]],
         direction = "horizontal"
         -- highlights = highlights,
@@ -125,4 +124,16 @@ return require("packer").startup(function(use)
     end
   }
   use 'feline-nvim/feline.nvim'
+  use 'HiPhish/nvim-ts-rainbow2'
+  use 'mfussenegger/nvim-dap'
+  use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+  use {
+    'theHamsta/nvim-dap-virtual-text',
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end
+  }
+  use 'mfussenegger/nvim-jdtls'
+  use {'nvim-telescope/telescope-ui-select.nvim'}
+  use 'justinmk/vim-sneak'
 end)
