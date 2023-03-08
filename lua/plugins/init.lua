@@ -23,7 +23,6 @@ return require("packer").startup(function(use)
   use({"folke/tokyonight.nvim"})
   use({"nvim-telescope/telescope.nvim", tag = "0.1.0", requires = {{"nvim-lua/plenary.nvim"}}})
   use("nvim-tree/nvim-web-devicons")
-  use({"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}})
   use({"akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons"})
   use({
     "nvim-tree/nvim-tree.lua",
@@ -57,16 +56,11 @@ return require("packer").startup(function(use)
   use("norcalli/nvim-colorizer.lua")
   use("lewis6991/gitsigns.nvim")
   use("jose-elias-alvarez/null-ls.nvim")
-  use({"rose-pine/neovim"})
   use("terrortylor/nvim-comment")
   use({"folke/zen-mode.nvim", config = "require('zen-mode-config')"})
   use({"folke/twilight.nvim", config = "require('twilight-config')"})
-  use({"neoclide/coc.nvim", branch = "release"})
   use("matbme/JABS.nvim")
-  use("ellisonleao/gruvbox.nvim")
-  use("EdenEast/nightfox.nvim")
   use({"kylechui/nvim-surround", tag = "*"})
-  use("shaunsingh/nord.nvim")
   use({
     "akinsho/toggleterm.nvim",
     tag = "*",
@@ -81,7 +75,6 @@ return require("packer").startup(function(use)
     end
   })
   use({"ckipp01/stylua-nvim"})
-  use 'shaunsingh/solarized.nvim'
   use({
     "glepnir/lspsaga.nvim",
     branch = "main",
@@ -136,4 +129,5 @@ return require("packer").startup(function(use)
   use 'mfussenegger/nvim-jdtls'
   use {'nvim-telescope/telescope-ui-select.nvim'}
   use 'justinmk/vim-sneak'
+  use 'navarasu/onedark.nvim'
 end)

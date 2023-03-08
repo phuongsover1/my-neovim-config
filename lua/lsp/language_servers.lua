@@ -12,7 +12,7 @@ require'lspconfig'.cssls.setup {capabilities = capabilities}
 require'lspconfig'.tsserver.setup {capabilities = capabilities}
 require'lspconfig'.eslint.setup {capabilities = capabilities}
 require'lspconfig'.lua_ls.setup {capabilities = capabilities}
-require'lspconfig'.jdtls.setup {capabilities = capabilities}
+require'lspconfig'.jsonls.setup {capabilities = capabilities}
 
 --   require'lspconfig'.sumneko_lua.setup {
 --     capabilities = capabilities,

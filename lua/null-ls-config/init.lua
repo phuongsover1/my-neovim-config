@@ -5,7 +5,7 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.lua_format, null_ls.builtins.formatting.prettier, formatting.black,
-    formatting.gofmt, formatting.shfmt, formatting.clang_format, formatting.cmake_format,
+    formatting.gofmt, formatting.shfmt, formatting.google_java_format, formatting.cmake_format,
     formatting.dart_format, formatting.lua_format.with({
       extra_args = {
         '--no-keep-simple-function-one-line', '--no-break-after-operator', '--column-limit=100',

@@ -186,9 +186,16 @@ end
 local component = {}
 
 component.vim_mode = {
-  provider = function()
-    return vim.api.nvim_get_mode().mode:upper()
-  end,
+  -- provider = function()
+  --   -- return vim.api.nvim_get_mode().mode:upper()
+  -- end,
+  provider = {
+    name = "vi_mode",
+    opts = {
+      show_mode_name = true
+      -- padding = "center", -- Uncomment for extra padding.
+    }
+  },
   hl = function()
     return {
       fg = "bg",
