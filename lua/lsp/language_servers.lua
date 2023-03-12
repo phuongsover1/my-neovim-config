@@ -4,15 +4,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
-require'lspconfig'.angularls.setup {capabilities = capabilities}
-require'lspconfig'.jsonls.setup {capabilities = capabilities}
-require'lspconfig'.html.setup {capabilities = capabilities}
+require 'lspconfig'.angularls.setup { capabilities = capabilities }
+require 'lspconfig'.jsonls.setup { capabilities = capabilities }
+require 'lspconfig'.html.setup { capabilities = capabilities }
 
-require'lspconfig'.cssls.setup {capabilities = capabilities}
-require'lspconfig'.tsserver.setup {capabilities = capabilities}
-require'lspconfig'.eslint.setup {capabilities = capabilities}
-require'lspconfig'.lua_ls.setup {capabilities = capabilities}
-require'lspconfig'.jsonls.setup {capabilities = capabilities}
+require 'lspconfig'.cssls.setup { capabilities = capabilities }
+require 'lspconfig'.tsserver.setup { capabilities = capabilities }
+require 'lspconfig'.eslint.setup { capabilities = capabilities }
+require 'lspconfig'.lua_ls.setup { capabilities = capabilities }
+require 'lspconfig'.jsonls.setup { capabilities = capabilities }
+require 'lspconfig'.jedi_language_server.setup { capabilities = capabilities }
+-- require 'lspconfig'.quick_lint_js.setup { capabilities = capabilities }
 
 --   require'lspconfig'.sumneko_lua.setup {
 --     capabilities = capabilities,
@@ -43,12 +45,12 @@ local configs = require('lspconfig/configs')
 lspconfig.emmet_ls.setup({
   -- on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less'},
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
   init_options = {
     html = {
       options = {
         -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-        ["bem.enabled"] = true
+            ["bem.enabled"] = true
       }
     }
   }
