@@ -12,13 +12,13 @@ vim.cmd([[autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc  ]])
 -- vim.cmd [[colorscheme tokyonight-night]]
 -- vim.opt.clipboard+=unnamed
 vim.cmd([[
-let g:coc_start_at_startup=0
 let g:sneak#label = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 ]])
 
 require("plugins")
+require("notify-config")
 require("telescope-config")
 require("bufferline-config")
 require("treesitter-config")
@@ -28,24 +28,16 @@ require("lsp")
 require("autopair-config")
 require("keybindings")
 require("whichkey-config")
--- require("indent-config")
 require("colorizer-config")
 require("gitsigns-config")
 require("null-ls-config")
 require("nvim-comment-config")
 require("tokyonight-config")
--- require("coc-config")
 require("jabs-buffer-config")
--- require('gruvbox-config')
--- require('nightfox-config')
 require("surround-config")
--- require('nord-config')
--- require('rose-pine-config')
-
--- require("solarized-config")
--- require("lualine-config")
 require("feline-config")
 require("nvim-dap-config")
 require("dap-ui-config")
 require("jdtls-config")
 require("null-ls-mason-config")
+require("noice-config")

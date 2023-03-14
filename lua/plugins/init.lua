@@ -83,12 +83,12 @@ return require("packer").startup(function(use)
 		end,
 		requires = { { "nvim-tree/nvim-web-devicons" } },
 	})
-	use({
-		"ray-x/lsp_signature.nvim",
-		config = function()
-			require("lsp_signature").setup()
-		end,
-	})
+	-- use({
+	-- 	"ray-x/lsp_signature.nvim",
+	-- 	config = function()
+	-- 		require("lsp_signature").setup()
+	-- 	end,
+	-- })
 	use({
 		"tversteeg/registers.nvim",
 		config = function()
@@ -131,4 +131,18 @@ return require("packer").startup(function(use)
 	use("justinmk/vim-sneak")
 	use("jay-babu/mason-null-ls.nvim")
 	use("RRethy/vim-illuminate")
+	use({
+		"rcarriga/nvim-notify",
+	})
+	use({
+		"folke/noice.nvim",
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	})
 end)
