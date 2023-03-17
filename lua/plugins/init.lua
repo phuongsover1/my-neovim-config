@@ -83,12 +83,12 @@ return require("packer").startup(function(use)
 		end,
 		requires = { { "nvim-tree/nvim-web-devicons" } },
 	})
-	-- use({
-	-- 	"ray-x/lsp_signature.nvim",
-	-- 	config = function()
-	-- 		require("lsp_signature").setup()
-	-- 	end,
-	-- })
+	use({
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").setup()
+		end,
+	})
 	use({
 		"tversteeg/registers.nvim",
 		config = function()
@@ -126,7 +126,6 @@ return require("packer").startup(function(use)
 			require("nvim-dap-virtual-text").setup()
 		end,
 	})
-	use("mfussenegger/nvim-jdtls")
 	use({ "nvim-telescope/telescope-ui-select.nvim" })
 	use("justinmk/vim-sneak")
 	use("jay-babu/mason-null-ls.nvim")
