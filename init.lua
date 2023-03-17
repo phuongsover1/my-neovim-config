@@ -18,7 +18,6 @@ map F <Plug>Sneak_S
 ]])
 
 require("plugins")
--- require("notify-config")
 require("telescope-config")
 require("bufferline-config")
 require("treesitter-config")
@@ -39,4 +38,3 @@ require("feline-config")
 require("nvim-dap-config")
 require("dap-ui-config")
 require("null-ls-mason-config")
--- require("noice-config")
