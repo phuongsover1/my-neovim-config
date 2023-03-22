@@ -48,8 +48,6 @@ return require("packer").startup(function(use)
 	use("folke/which-key.nvim")
 	use("p00f/nvim-ts-rainbow")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("hrsh7th/vim-vsnip")
-	use("hrsh7th/vim-vsnip-integ")
 	use("rafamadriz/friendly-snippets")
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "saadparwaiz1/cmp_luasnip" })
@@ -130,4 +128,12 @@ return require("packer").startup(function(use)
 	use("justinmk/vim-sneak")
 	use("jay-babu/mason-null-ls.nvim")
 	use("RRethy/vim-illuminate")
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({})
+		end,
+	})
+	use("j-hui/fidget.nvim")
 end)

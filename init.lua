@@ -10,11 +10,12 @@ vim.opt.expandtab = true
 -- vim.opt.mouse = vim.cmd([[set sessionoptions-=blank]])
 vim.cmd([[autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc  ]])
 -- vim.cmd [[colorscheme tokyonight-night]]
--- vim.opt.clipboard+=unnamed
+-- vim.opt.clipboard = unnamed
 vim.cmd([[
 let g:sneak#label = 1
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+set clipboard=unnamedplus
 ]])
 
 require("plugins")
@@ -38,3 +39,4 @@ require("feline-config")
 require("nvim-dap-config")
 require("dap-ui-config")
 require("null-ls-mason-config")
+require("fidget-config")
