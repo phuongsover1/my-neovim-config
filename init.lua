@@ -1,16 +1,14 @@
 vim.opt.termguicolors = true
 vim.opt.number = true
+
 vim.opt.relativenumber = true
 vim.opt.encoding = "UTF-8"
--- vim.opt.guifont = { "JetBrainsMono Nerd Font Bold", "h11" }
 vim.opt.tabstop = 2
 vim.opt.cursorline = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
--- vim.opt.mouse = vim.cmd([[set sessionoptions-=blank]])
+vim.opt.mouse = vim.cmd([[set sessionoptions-=blank]])
 vim.cmd([[autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc  ]])
--- vim.cmd [[colorscheme tokyonight-night]]
--- vim.opt.clipboard = unnamed
 vim.cmd([[
 let g:sneak#label = 1
 map f <Plug>Sneak_s

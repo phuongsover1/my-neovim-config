@@ -135,5 +135,13 @@ return require("packer").startup(function(use)
 			require("todo-comments").setup({})
 		end,
 	})
+	use({
+		"LeonHeidelbach/trailblazer.nvim",
+		config = function()
+			require("trailblazer").setup({
+				-- your custom config goes here
+			})
+		end,
+	})
 	use("j-hui/fidget.nvim")
 end)
