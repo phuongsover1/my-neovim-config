@@ -5,8 +5,9 @@
 -- })
 -- rose pine
 -- local highlights = require('rose-pine.plugins.bufferline')
-local highlights = require("rose-pine.plugins.bufferline")
+-- local highlights = require("rose-pine.plugins.bufferline")
 -- highlights = require("nord.plugins.bufferline").akinsho(),
+highlights = require("catppuccin.groups.integrations.bufferline").get()
 require("bufferline").setup({
 	options = {
 		separator_style = "thin",

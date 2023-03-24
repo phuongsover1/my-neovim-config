@@ -11,14 +11,13 @@ vim.opt.mouse = vim.cmd([[set sessionoptions-=blank]])
 vim.cmd([[autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc  ]])
 vim.cmd([[
 let g:sneak#label = 1
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
-set clipboard=unnamedplus
+  map f <Plug>Sneak_s
+  map F <Plug>Sneak_S
+  set clipboard=unnamedplus
 ]])
 
 require("plugins")
 require("telescope-config")
-require("bufferline-config")
 require("treesitter-config")
 require("web-devicons")
 require("nvim-tree-config")
@@ -38,5 +37,9 @@ require("nvim-dap-config")
 require("dap-ui-config")
 require("null-ls-mason-config")
 require("fidget-config")
-require("rose-pine-config")
+require("neoscroll-config")
+-- require("rose-pine-config")
 require("lualine-config")
+require("indent-config")
+require("catppuccin-config")
+require("bufferline-config")

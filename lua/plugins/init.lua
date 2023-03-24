@@ -108,12 +108,6 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-	use({
-		"echasnovski/mini.indentscope",
-		config = function()
-			require("mini.indentscope").setup()
-		end,
-	})
 	use("feline-nvim/feline.nvim")
 	use("HiPhish/nvim-ts-rainbow2")
 	use("mfussenegger/nvim-dap")
@@ -149,4 +143,7 @@ return require("packer").startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
+	use("karb94/neoscroll.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("echasnovski/mini.indentscope")
 end)
