@@ -10,7 +10,7 @@ require("neoscroll").setup({
 		end
 	end,
 })
-local t = {}
-t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "350", "sine", [['cursorline']] } }
-t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "350", "sine", [['cursorline']] } }
-require("neoscroll.config").set_mappings(t)
+-- local t = {}
+-- t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "350", "sine", [['cursorline']] } }
+-- t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "350", "sine", [['cursorline']] } }
+-- require("neoscroll.config").set_mappings(t)

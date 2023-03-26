@@ -10,11 +10,11 @@ require("lspconfig").html.setup({ capabilities = capabilities })
 
 require("lspconfig").cssls.setup({ capabilities = capabilities })
 require("lspconfig").tsserver.setup({ capabilities = capabilities })
-require("lspconfig").eslint.setup({ capabilities = capabilities })
+require("lspconfig").eslint.setup({ capabilities = capabilities, autostart = false })
 require("lspconfig").lua_ls.setup({ capabilities = capabilities })
 require("lspconfig").jsonls.setup({ capabilities = capabilities })
--- require("lspconfig").quick_lint_js.setup({ capabilities = capabilities })
-require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
+require("lspconfig").quick_lint_js.setup({ capabilities = capabilities, autostart = false })
+require("lspconfig").tailwindcss.setup({ capabilities = capabilities, autostart = false })
 
 --   require'lspconfig'.sumneko_lua.setup {
 --     capabilities = capabilities,
@@ -45,7 +45,7 @@ local configs = require("lspconfig/configs")
 lspconfig.emmet_ls.setup({
 	-- on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+	filetypes = { "html", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
 	init_options = {
 		html = {
 			options = {
